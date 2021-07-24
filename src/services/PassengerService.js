@@ -9,11 +9,11 @@ const apiClient = axios.create({
   }
 })
 export default {
-  getEvents(page,size) {
-    console.log('/passenger?page='+ page + '&size='+size)
-    return apiClient.get('/passenger?page='+ page + '&size='+size)
+  getEvents(page, size) {
+    console.log('/passenger?page=' + page + '&size=' + size)
+    return apiClient.get('/passenger?page=' + page + '&size=' + size)
   },
   getEvent(id) {
-    return apiClient.get('/passenger/'+ id)
+    return apiClient.get('/passenger/' + id)
   }
 }

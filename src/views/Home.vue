@@ -9,7 +9,7 @@
 <script>
 // @ is an alias to /src
 import PassengerCard from '@/components/PassengerCard.vue'
-import  PassengerService from '@/services/PassengerService.js'
+import PassengerService from '@/services/PassengerService.js'
 export default {
   name: 'Home',
   props: {

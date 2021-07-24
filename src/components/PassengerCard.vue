@@ -1,6 +1,6 @@
-   <!-- on {{ passenger.trips }}
+<!-- on {{ passenger.trips }}
     {{passenger.airline.name}} -->
-      <!-- <div v-for="x in passenger.airline" :key="x.id">
+<!-- <div v-for="x in passenger.airline" :key="x.id">
       <span> {{ x.name }}</span>
     </div> -->
 
