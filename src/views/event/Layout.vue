@@ -20,13 +20,17 @@ export default {
   props: ['id'],
   data() {
     return {
-      passenger: null
+      passenger: null,
+      Isarray: false
     }
   },
   created() {
     PassengerService.getEvent(this.id)
       .then((response) => {
         this.passenger = response.data
+        if(Array.isArray(this.passenger.airline)){
+            this.Isarray = true
+        }
       })
       .catch((error) => {
         console.log(error)
