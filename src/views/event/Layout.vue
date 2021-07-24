@@ -33,6 +33,12 @@ export default {
         //     this.Isarray = true
         //     console.log(this.Isarray )
         // }
+          if (response && response.status == 204) {
+          this.$router.push({
+            name: '404Resource',
+            params: { resource: 'event' }
+          })
+        }
       })
       .catch((error) => {
         console.log(error)
