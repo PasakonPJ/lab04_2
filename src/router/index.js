@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+import About from '../views/About.vue'
 import EventLayout from '@/views/event/Layout.vue'
 import EventAirline from '@/views/event/Airline.vue'
 import EventDeatil from '@/views/event/Detail.vue'
@@ -10,12 +11,13 @@ const routes = [
     component: Home,
     props: (route) => ({
       page: parseInt(route.query.page) || 0,
-      size: parseInt(route.query.size) || 10
+      size: parseInt(route.query.size) || 5
     })
   },
   {
     path: '/about',
-    name: 'About'
+    name: 'About',
+    component: About
   },
   {
     path: '/passenger/:id',

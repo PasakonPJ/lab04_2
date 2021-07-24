@@ -29,7 +29,9 @@ export default {
       .then((response) => {
         this.passenger = response.data
         if(Array.isArray(this.passenger.airline)){
+            console.log(this.passenger.airline)
             this.Isarray = true
+            console.log(this.Isarray )
         }
       })
       .catch((error) => {

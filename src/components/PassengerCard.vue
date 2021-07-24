@@ -1,8 +1,3 @@
-<!-- on {{ passenger.trips }}
-    {{passenger.airline.name}} -->
-<!-- <div v-for="x in passenger.airline" :key="x.id">
-      <span> {{ x.name }}</span>
-    </div> -->
 
 <template>
   <router-link
@@ -39,5 +34,9 @@ export default {
 .passenger-card:hover {
   transform: scale(1.01);
   box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2);
+}
+.event-link {
+  color: green;
+  text-decoration: none;
 }
 </style>
