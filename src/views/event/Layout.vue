@@ -8,7 +8,7 @@
       <router-link :to="{ name: 'EventAirline', params: { id } }">
         Airline
       </router-link>
-
+      <!-- passenger that not have "" must binding with another props -->
       <router-view :passenger="passenger" />
     </div>
   </div>
@@ -28,11 +28,11 @@ export default {
     PassengerService.getEvent(this.id)
       .then((response) => {
         this.passenger = response.data
-        if(Array.isArray(this.passenger.airline)){
-            console.log(this.passenger.airline)
-            this.Isarray = true
-            console.log(this.Isarray )
-        }
+        // if(Array.isArray(this.passenger.airline)){
+        //     console.log(this.passenger.airline)
+        //     this.Isarray = true
+        //     console.log(this.Isarray )
+        // }
       })
       .catch((error) => {
         console.log(error)

@@ -16,6 +16,7 @@
         {{ airline.name }}
       </span>
     </span>
+      <!-- <span> {{ passenger[0].airline.name }}</span> -->
   </p>
 
   <p>

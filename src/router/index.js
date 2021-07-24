@@ -4,6 +4,7 @@ import About from '../views/About.vue'
 import EventLayout from '@/views/event/Layout.vue'
 import EventAirline from '@/views/event/Airline.vue'
 import EventDeatil from '@/views/event/Detail.vue'
+import NotFound from '@/views/NotFound.vue'
 const routes = [
   {
     path: '/',
@@ -36,7 +37,13 @@ const routes = [
         component: EventAirline
       }
     ]
-  }
+  },
+  {
+    path: '/:catchAll(.*)',
+    name: 'NotFound',
+    component: NotFound,
+    
+  } 
 ]
 
 const router = createRouter({
