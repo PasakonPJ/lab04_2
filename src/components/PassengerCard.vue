@@ -1,11 +1,18 @@
-<template>
-  <div class="passenger-card">
-    <span>@ {{ passenger.name }} on {{ passenger.trips }}</span>
-    {{passenger.airline.name}}
-    <div v-for="x in passenger.airline" :key="x.id">
+   <!-- on {{ passenger.trips }}
+    {{passenger.airline.name}} -->
+      <!-- <div v-for="x in passenger.airline" :key="x.id">
       <span> {{ x.name }}</span>
+    </div> -->
+
+<template>
+  <router-link
+    class="event-link"
+    :to="{ name: 'PassengerDetails', params: { id: passenger._id } }"
+  >
+    <div class="passenger-card">
+      <span>{{ passenger.name }} </span>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script>

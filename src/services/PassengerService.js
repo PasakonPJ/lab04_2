@@ -13,7 +13,7 @@ export default {
     console.log('/passenger?page='+ page + '&size='+size)
     return apiClient.get('/passenger?page='+ page + '&size='+size)
   },
-  getEvent() {
-    return apiClient.get('/passenger')
+  getEvent(id) {
+    return apiClient.get('/passenger/'+ id)
   }
 }
