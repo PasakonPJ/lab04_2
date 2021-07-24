@@ -35,8 +35,7 @@ export default {
         // }
           if (response && response.status == 204) {
           this.$router.push({
-            name: '404Resource',
-            params: { resource: 'event' }
+            name: '404Resource', params: { resource: 'This id is not defind '+ this.id }
           })
         }
       })
