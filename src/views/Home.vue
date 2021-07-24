@@ -2,14 +2,14 @@
   <h1>Events For Good</h1>
 
   <div class="events">
-    <PassagerCard v-for="pass in events" :key="pass.id" :passager="pass" />
+    <PassengerCard v-for="pass in events" :key="pass.id" :passenger="pass" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import PassagerCard from '@/components/PassagerCard.vue'
-import PassagerService from '@/services/PassagerService.js'
+import PassengerCard from '@/components/PassengerCard.vue'
+import  PassengerService from '@/services/PassengerService.js'
 export default {
   name: 'Home',
   props: {
@@ -23,7 +23,7 @@ export default {
     }
   },
   components: {
-    PassagerCard
+    PassengerCard
   },
   data() {
     return {
@@ -32,7 +32,7 @@ export default {
     }
   },
   created() {
-    PassagerService.getEvents(this.page, this.size)
+    PassengerService.getEvents(this.page, this.size)
       .then((response) => {
         this.events = response.data.data
       })

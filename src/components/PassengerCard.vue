@@ -1,8 +1,8 @@
 <template>
-  <div class="passager-card">
-    <span>@ {{ passager.name }} on {{ passager.trips }}</span>
-    {{passager.airline.name}}
-    <div v-for="x in passager.airline" :key="x.id">
+  <div class="passenger-card">
+    <span>@ {{ passenger.name }} on {{ passenger.trips }}</span>
+    {{passenger.airline.name}}
+    <div v-for="x in passenger.airline" :key="x.id">
       <span> {{ x.name }}</span>
     </div>
   </div>
@@ -10,9 +10,9 @@
 
 <script>
 export default {
-  name: 'PassagerCard',
+  name: 'PassengerCard',
   props: {
-    passager: {
+    passenger: {
       type: Object,
       required: true
     }
@@ -21,15 +21,15 @@ export default {
 </script>
 
 <style scoped>
-.passager-card {
+.passenger-card {
   padding: 20px;
   width: 250px;
   cursor: pointer;
-  border: 1px solid #39495c;
+  border: 1px solid #145e1e;
   margin-bottom: 18px;
 }
 
-.passager-card:hover {
+.passenger-card:hover {
   transform: scale(1.01);
   box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2);
 }
