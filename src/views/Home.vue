@@ -1,5 +1,5 @@
 <template>
-  <h1>Events For Good</h1>
+  <h1>List of Passenger</h1>
 
   <div class="events">
     <PassengerCard v-for="pass in events" :key="pass.id" :passenger="pass" />
