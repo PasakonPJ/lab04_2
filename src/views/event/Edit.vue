@@ -17,7 +17,7 @@ export default {
         this.GStore.flash_editMessage = ''
       }, 5000)
       this.$router.push({
-        name: 'EventDeatil'
+        name: 'Home'
       })
     }
   }

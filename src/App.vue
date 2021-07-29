@@ -1,4 +1,7 @@
 <template>
+  <div id="flash_editMessage" v-if="GStore.flash_editMessage">
+    {{ GStore.flash_editMessage }}
+  </div>
   <div id="nav">
     <router-link :to="{ name: 'Home' }">Home</router-link> |
     <router-link :to="{ name: 'About' }">About</router-link>
