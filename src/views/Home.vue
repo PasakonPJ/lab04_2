@@ -3,6 +3,24 @@
 
   <div class="events">
     <PassengerCard v-for="pass in events" :key="pass.id" :passenger="pass" />
+     <div class="pagination">
+      <router-link
+        id="page-prev"
+        :to="{ name: 'Home', query: { page: page - 1 } }"
+        rel="prev"
+        v-if="page != 0"
+      >
+        Prev Page</router-link
+      >
+
+      <router-link
+        id="page-next"
+        :to="{ name: 'Home', query: { page: page + 1 } }"
+        rel="next"
+      >
+        Next Page</router-link
+      >
+    </div>
   </div>
 </template>
 
@@ -19,7 +37,7 @@ export default {
   data() {
     return {
       events: null,
-      selectedpage: this.page
+      totalEvents: 0
     }
   },
   // created() {
@@ -48,12 +66,14 @@ export default {
       .then((response) => {
         this.events = response.data.data
         this.totalEvents = response.headers['x-total-count'] // <--- Store it
+        console.log(this.totalEvents)
         next()
       })
       .catch(() => {
         next({ name: 'NetworkError' })
       })
-  }
+  },
+
 }
 </script>
 <style scoped>
@@ -82,4 +102,22 @@ export default {
   text-align: left;
   flex-direction: column;
 }
+.pagination {
+  display: flex;
+  width: 290px;
+}
+.pagination a {
+  flex: 1;
+  text-decoration: none;
+  color: #2c3e50;
+}
+
+#page-prev {
+  text-align: left;
+}
+
+#page-next {
+  text-align: right;
+}
+
 </style>
