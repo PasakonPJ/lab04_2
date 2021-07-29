@@ -1,7 +1,7 @@
 <template>
-  <div id="flash_editMessage" v-if="GStore.flash_editMessage">
+  <!-- <div id="flash_editMessage" v-if="GStore.flash_editMessage">
     {{ GStore.flash_editMessage }}
-  </div>
+  </div> -->
   <!-- <div v-if='move()'></div> -->
   <h1>Name: {{ passenger.name }}</h1>
   <h2>Trips: {{ passenger.trips }}</h2>

@@ -22,13 +22,36 @@ export default {
       selectedpage: this.page
     }
   },
-  created() {
-    PassengerService.getEvents(this.page, this.size)
+  // created() {
+  //   PassengerService.getEvents(this.page, this.size)
+  //     .then((response) => {
+  //       this.events = response.data.data
+  //     })
+  //     .catch((error) => {
+  //       console.log(error)
+  //     })
+  // },
+   beforeRouteEnter(routeTo, routeFrom, next) {
+    PassengerService.getEvents(parseInt(routeTo.query.page) || 0,4)
+      .then((response) => {
+        next((comp) => {
+          comp.events = response.data.data
+          comp.totalEvents = response.headers['x-total-count']
+        })
+      })
+      .catch(() => {
+        next({ name: 'NetworkError' })
+      })
+  },
+  beforeRouteUpdate(routeTo, routeFrom, next) {
+    PassengerService.getEvents(parseInt(routeTo.query.page) || 0,4)
       .then((response) => {
         this.events = response.data.data
+        this.totalEvents = response.headers['x-total-count'] // <--- Store it
+        next()
       })
-      .catch((error) => {
-        console.log(error)
+      .catch(() => {
+        next({ name: 'NetworkError' })
       })
   }
 }
