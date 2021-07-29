@@ -8,7 +8,7 @@
       <router-link :to="{ name: 'EventAirline', params: { id } }">
         Airline
       </router-link>
-       |
+      |
       <router-link :to="{ name: 'EventEdit', params: { id } }">
         Edit
       </router-link>
@@ -37,9 +37,10 @@ export default {
         //     this.Isarray = true
         //     console.log(this.Isarray )
         // }
-          if (response && response.status == 204) {
+        if (response && response.status == 204) {
           this.$router.push({
-            name: '404Resource', params: { resource: 'This id is not defind '+ this.id }
+            name: '404Resource',
+            params: { resource: 'This id is not defind ' + this.id }
           })
         }
       })

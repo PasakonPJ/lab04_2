@@ -12,8 +12,7 @@ import PassengerCard from '@/components/PassengerCard.vue'
 import PassengerService from '@/services/PassengerService.js'
 export default {
   name: 'Home',
-  props:['page','size']
-  ,
+  props: ['page', 'size'],
   components: {
     PassengerCard
   },

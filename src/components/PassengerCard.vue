@@ -1,4 +1,3 @@
-
 <template>
   <router-link
     class="event-link"

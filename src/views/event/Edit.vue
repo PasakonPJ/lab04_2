@@ -5,6 +5,21 @@
 
 <script>
 export default {
-  props: ['passenger']
+  props: ['passenger'],
+  inject: ['GStore'],
+  methods: {
+    Edit() {
+      //Assuming successful API call to register then
+      //Set a flash message to appear on the next page loaded which says
+      this.GStore.flash_editMessage = 'The data has been updated'
+      setTimeout(() => {
+        //After 3 secs remove it
+        this.GStore.flash_editMessage = ''
+      }, 5000)
+      this.$router.push({
+        name: 'EventDeatil'
+      })
+    }
+  }
 }
 </script>
