@@ -5,6 +5,7 @@ import EventLayout from '@/views/event/Layout.vue'
 import EventAirline from '@/views/event/Airline.vue'
 import EventDeatil from '@/views/event/Detail.vue'
 import NotFound from '@/views/NotFound.vue'
+import EventEdit from '@/views/event/Edit.vue'
 const routes = [
   {
     path: '/',
@@ -30,6 +31,11 @@ const routes = [
         path: '',
         name: 'EventDeatil',
         component: EventDeatil
+      },
+      {
+        path: 'edit',
+        name: 'EventEdit',
+        component: EventEdit
       },
       {
         path: 'airline',

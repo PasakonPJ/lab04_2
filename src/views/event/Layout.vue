@@ -8,6 +8,10 @@
       <router-link :to="{ name: 'EventAirline', params: { id } }">
         Airline
       </router-link>
+       |
+      <router-link :to="{ name: 'EventEdit', params: { id } }">
+        Edit
+      </router-link>
       <!-- passenger that not have "" must binding with another props -->
       <router-view :passenger="passenger" />
     </div>
