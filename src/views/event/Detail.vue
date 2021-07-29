@@ -1,8 +1,4 @@
 <template>
-  <!-- <div id="flash_editMessage" v-if="GStore.flash_editMessage">
-    {{ GStore.flash_editMessage }}
-  </div> -->
-  <!-- <div v-if='move()'></div> -->
   <h1>Name: {{ passenger.name }}</h1>
   <h2>Trips: {{ passenger.trips }}</h2>
 </template>
@@ -11,11 +7,11 @@
 export default {
   props: ['passenger'],
   inject: ['GStore'],
-   move() { 
-      this.$router.push({
-        name: 'About'
-      })
-    }
+  move() {
+    this.$router.push({
+      name: 'About'
+    })
+  }
 }
 </script>
 <style scoped>
@@ -44,8 +40,7 @@ export default {
 #flash_editMessage {
   animation-name: orangefade;
   animation-duration: 5s;
-  
-  
-  margin-top: 0.5cm ;
+
+  margin-top: 0.5cm;
 }
 </style>

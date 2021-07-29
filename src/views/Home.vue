@@ -31,8 +31,8 @@ export default {
   //       console.log(error)
   //     })
   // },
-   beforeRouteEnter(routeTo, routeFrom, next) {
-    PassengerService.getEvents(parseInt(routeTo.query.page) || 0,4)
+  beforeRouteEnter(routeTo, routeFrom, next) {
+    PassengerService.getEvents(parseInt(routeTo.query.page) || 0, 4)
       .then((response) => {
         next((comp) => {
           comp.events = response.data.data
@@ -44,7 +44,7 @@ export default {
       })
   },
   beforeRouteUpdate(routeTo, routeFrom, next) {
-    PassengerService.getEvents(parseInt(routeTo.query.page) || 0,4)
+    PassengerService.getEvents(parseInt(routeTo.query.page) || 0, 4)
       .then((response) => {
         this.events = response.data.data
         this.totalEvents = response.headers['x-total-count'] // <--- Store it

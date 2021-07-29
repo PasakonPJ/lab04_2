@@ -7,6 +7,8 @@ import EventDeatil from '@/views/event/Detail.vue'
 import NotFound from '@/views/NotFound.vue'
 import EventEdit from '@/views/event/Edit.vue'
 import NProgress from 'nprogress'
+import PassengerService from '@/services/PassengerService.js'
+import GStore from '@/store'
 const routes = [
   {
     path: '/',
@@ -27,6 +29,23 @@ const routes = [
     name: 'EventLayout',
     component: EventLayout,
     props: true,
+    beforeEnter: (to) => {
+      return PassengerService.getEvent(to.params.id)
+        .then((response) => {
+          // still need to set the data here
+          GStore.event = response.data
+        })
+        .catch((error) => {
+          if (error.response && error.response.status == 404) {
+            return {
+              name: '404Resource',
+              params: { resource: 'event' }
+            }
+          } else {
+            return { name: 'NetworkError' }
+          }
+        })
+    },
     children: [
       {
         path: '',
@@ -62,10 +81,10 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
 })
-router.beforeEach(()=>{
+router.beforeEach(() => {
   NProgress.start()
 })
-router.afterEach(()=>{
+router.afterEach(() => {
   NProgress.done()
 })
 export default router

@@ -1,5 +1,5 @@
 <template>
-  <div v-if="passenger">
+  <div v-if="GStore.passenger">
     <div id="nav">
       <router-link :to="{ name: 'EventDeatil', params: { id } }">
         Details
@@ -13,40 +13,14 @@
         Edit
       </router-link>
       <!-- passenger that not have "" must binding with another props -->
-      <router-view :passenger="passenger" />
+      <router-view :passenger="GStore.passenger" />
     </div>
   </div>
 </template>
 
 <script>
-import PassengerService from '@/services/PassengerService.js'
+//import PassengerService from '@/services/PassengerService.js'
 export default {
-  props: ['id'],
-  data() {
-    return {
-      passenger: null,
-      Isarray: false
-    }
-  },
-  created() {
-    PassengerService.getEvent(this.id)
-      .then((response) => {
-        this.passenger = response.data
-        // if(Array.isArray(this.passenger.airline)){
-        //     console.log(this.passenger.airline)
-        //     this.Isarray = true
-        //     console.log(this.Isarray )
-        // }
-        if (response && response.status == 204) {
-          this.$router.push({
-            name: '404Resource',
-            params: { resource: 'This id is not defind ' + this.id }
-          })
-        }
-      })
-      .catch((error) => {
-        console.log(error)
-      })
-  }
+  inject:['GStore']
 }
 </script>
