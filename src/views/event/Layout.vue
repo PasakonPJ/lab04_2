@@ -21,6 +21,6 @@
 <script>
 //import PassengerService from '@/services/PassengerService.js'
 export default {
-  inject:['GStore']
+  inject: ['GStore']
 }
 </script>

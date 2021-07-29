@@ -33,10 +33,10 @@ const routes = [
       return PassengerService.getEvent(to.params.id)
         .then((response) => {
           // still need to set the data here
-          GStore.event = response.data
+          GStore.passenger = response.data
         })
         .catch((error) => {
-          if (error.response && error.response.status == 404) {
+          if (error.response && error.response.status == 204) {
             return {
               name: '404Resource',
               params: { resource: 'event' }
