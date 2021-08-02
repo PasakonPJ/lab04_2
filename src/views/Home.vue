@@ -38,7 +38,9 @@ export default {
 .events {
   display: flex;
   flex-direction: column;
+  /* //align-items: center; */
   align-items: center;
+  
 }
 .pagination {
   display: flex;
